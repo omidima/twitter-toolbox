@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_tools/data/dto/UserResponse.dart';
 import 'package:twitter_tools/data/repository/UserRepository.dart';
+import 'package:twitter_tools/presenter/screen/ReviewFollowBack.dart';
+import 'package:twitter_tools/presenter/widget/OptionItem.dart';
 
 import '../../data/dto/TwitterResponse.dart';
 
@@ -115,12 +117,18 @@ class _ProfilePageState extends State<ProfilePage> {
                 leadingWidth: 70,
                 leading: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: Colors.black54,
-                        borderRadius: BorderRadius.circular(50)),
-                    child: Icon(Icons.arrow_back),
+                  child: InkWell(
+                    onTap: () {
+                      print('clicker');
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                          color: Colors.black54,
+                          borderRadius: BorderRadius.circular(50)),
+                      child: Icon(Icons.arrow_back),
+                    ),
                   ),
                 ),
                 actions: [
@@ -218,111 +226,53 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               SliverList(
                 delegate: SliverChildListDelegate([
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-
-                                decoration: BoxDecoration(
-                                    boxShadow:const [BoxShadow(
-                                      color: Colors.black38,
-                                    )],
-                                    color: Colors.white,
-
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-
-                                child: Column(
-                                  children: const [
-                                    Icon(Icons.person_add_alt_1),
-                                    SizedBox(height: 10,),
-                                    Text("unBack Follow user")
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Expanded(
-                              child: Container(
-
-                                decoration: BoxDecoration(
-                                    boxShadow:const [BoxShadow(
-                                      color: Colors.black38,
-                                    )],
-                                    color: Colors.white,
-
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-
-                                child: Column(
-                                  children: const[
-                                    Icon(Icons.person_add_alt_1),
-                                    SizedBox(height: 10,),
-                                    Text("unBack Follow user")
-                                  ],
-                                ),
-                              ),
-                            )
-                          ],
+                  const SizedBox(height: 20,),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: OptionItem(
+                          onTap: () {
+                            Navigator.push(context, ReviewFollowBack.route());
+                          },
+                          title: "find unBackFollow",
+                          icon: Icon(Icons.person),
                         ),
-                        const SizedBox(
-                          height: 10,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: OptionItem(
+                          onTap: () {},
+                          title: "DFAsbafdb",
+                          icon: Icon(Icons.person),
                         ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    boxShadow:const [BoxShadow(
-                                      color: Colors.black38,
-                                    )],
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-
-                                child: Column(
-                                  children: const [
-                                    Icon(Icons.person_add_alt_1),
-                                    SizedBox(height: 10,),
-                                    Text("unBack Follow user")
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Expanded(
-                              child: Container(
-
-                                decoration: BoxDecoration(
-                                    boxShadow:const [BoxShadow(
-                                      color: Colors.black38,
-                                    )],
-                                    color: Colors.white,
-
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-
-                                child: Column(
-                                  children: const[
-                                    Icon(Icons.person_add_alt_1),
-                                    SizedBox(height: 10,),
-                                    Text("unBack Follow user")
-                                  ],
-                                ),
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: OptionItem(
+                          onTap: () {},
+                          title: "DFAsbafdb",
+                          icon: Icon(Icons.person),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: OptionItem(
+                          onTap: () {},
+                          title: "DFAsbafdb",
+                          icon: Icon(Icons.person),
+                        ),
+                      )
+                    ],
                   )
                 ]),
               )
@@ -339,12 +289,18 @@ class _ProfilePageState extends State<ProfilePage> {
                     title: Text(user!.username ?? ""),
                     leading: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        margin: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                            color: Colors.black54,
-                            borderRadius: BorderRadius.circular(50)),
-                        child: Icon(Icons.arrow_back),
+                      child: InkWell(
+                        onTap: () {
+                          print('clicker');
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius: BorderRadius.circular(50)),
+                          child: Icon(Icons.arrow_back),
+                        ),
                       ),
                     ),
                     actions: [

@@ -26,7 +26,7 @@ abstract class NetworkClass {
       );
 
 
-  @GET('/lists/{id}/followed_lists')
+  @GET('/users/{id}/followed_lists')
   Future<TwitterFollowResponse> getFollowingList(
     @Path("id") String id
   );
